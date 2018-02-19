@@ -1,0 +1,9 @@
+if :wag_11.pers_no is not null then 
+   select 'MR.'||' '||EMP_FRST_NAME||' '||EMP_LAST_NAME,EMP_CTG_CATG_CODE into                  :wag_11.name1,:wag_11.cat
+   from empl_mstr where EMP_PERS_NMBR = :wag_11.pers_no ;
+   next_item ;
+else
+   message(' Pers No should not be null ');
+   raise form_trigger_failure;
+   end if;
+               
